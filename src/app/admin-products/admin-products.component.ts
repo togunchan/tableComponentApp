@@ -30,10 +30,10 @@ export class AdminProductsComponent {
 
   saveChanges(name, price, imageUrl, description) {
     const p = this.model.getProductById(this.selectedProduct.id);
-    p.name = name;
-    p.description = description;
-    p.price = price;
-    p.imageUrl = imageUrl;
+    p.name = this.selectedProduct.name;
+    p.description = this.selectedProduct.description;
+    p.price = this.selectedProduct.price;
+    p.imageUrl = this.selectedProduct.imageUrl;
     this.selectedProduct = null;
   }
 

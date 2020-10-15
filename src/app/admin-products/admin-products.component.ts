@@ -37,5 +37,10 @@ export class AdminProductsComponent {
     this.selectedProduct = null;
   }
 
+  deleteProduct(product: Product){
+    let index = this.products.indexOf(product);
+    this.products.splice(index,1);
+  }
+
 
 }

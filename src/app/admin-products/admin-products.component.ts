@@ -18,15 +18,24 @@ export class AdminProductsComponent {
     this.model = new ProductRepository();
     this.products = this.model.getProducts();
 
-   }
+  }
 
-   getSelected(product: Product): boolean {
-     return product == this.selectedProduct;
-   }
+  getSelected(product: Product): boolean {
+    return product == this.selectedProduct;
+  }
 
-   editProduct(product: Product){
+  editProduct(product: Product) {
     this.selectedProduct = product;
-   }
-  
+  }
+
+  saveChanges(name, price, imageUrl, description) {
+    const p = this.model.getProductById(this.selectedProduct.id);
+    p.name = name;
+    p.description = description;
+    p.price = price;
+    p.imageUrl = imageUrl;
+    this.selectedProduct = null;
+  }
+
 
 }

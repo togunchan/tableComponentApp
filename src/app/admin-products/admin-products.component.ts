@@ -11,7 +11,7 @@ export class AdminProductsComponent {
 
   products;
   model: ProductRepository;
-  selectedProduct: string;
+  selectedProduct: Product;
 
   constructor() {
 
@@ -21,7 +21,11 @@ export class AdminProductsComponent {
    }
 
    getSelected(product: Product): boolean {
-     return product.name == this.selectedProduct;
+     return product == this.selectedProduct;
+   }
+
+   editProduct(product: Product){
+    this.selectedProduct = product;
    }
   
 
